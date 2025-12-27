@@ -21,6 +21,23 @@ This project focuses on monitoring and analyzing Windows security events to dete
 
 ![PowerShell Security Log Output](scripts/powershell_output.png)
 
+## Security Analysis
+
+This script analyzes Windows Security Event Logs to identify authentication activity
+and potential indicators of malicious behavior.
+
+### Key Findings
+- Repeated failed logon attempts may indicate brute-force or password spraying attacks
+- Successful logons following multiple failures can indicate credential compromise
+- High-volume authentication activity outside normal hours may indicate automated attacks
+
+### Relevant Event IDs
+- **4625** – Failed logon attempt
+- **4624** – Successful logon
+- **4672** – Special privileges assigned to new logon
+
+This output helps defenders quickly identify suspicious authentication behavior
+that warrants further investigation.
 
 
 ## Author
