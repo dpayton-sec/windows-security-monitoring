@@ -18,5 +18,10 @@ This project focuses on monitoring and analyzing Windows security events to dete
 ## Project Status
  In Progress — foundational setup and documentation
 
+
+![PowerShell Security Log Output](scripts/powershell_output.png)
+
+
+
 ## Author
 Devon Payton
