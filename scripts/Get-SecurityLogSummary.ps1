@@ -46,7 +46,7 @@ $events = Get-WinEvent -FilterHashtable @{
   LogName   = "Security"
   Id        = $EventIds
   StartTime = $StartTime
-} -ErrorAction Stop
+} -ErrorAction SilentlyContinue
 
 # Build a simple raw export (time, id, message)
 $raw = $events | Select-Object `
