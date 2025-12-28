@@ -60,6 +60,25 @@ $events = Get-WinEvent -FilterHashtable @{
   StartTime = $StartTime
 } -ErrorAction SilentlyContinue
 
+# Pull events
+$events = Get-WinEvent -FilterHashtable @{
+    LogName   = "Security"
+    Id        = $EventIds
+    StartTime = $StartTime
+} -ErrorAction SilentlyContinue
+
+# 🔥 ADD THIS RIGHT HERE 🔥
+# Remove exact duplicate events (same time, ID, machine, message)
+$events = $events | Sort-Object TimeCreated, Id, MachineName, Message -Unique
+
+# Build a simple raw export (time, id, message)
+$raw = $events | Select-Object `
+    TimeCreated,
+    Id,
+    ProviderName,
+    MachineName,
+    Message
+
 # Build a simple raw export (time, id, message)
 $raw = $events | Select-Object `
   TimeCreated,
