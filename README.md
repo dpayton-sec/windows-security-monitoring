@@ -57,6 +57,11 @@ and potential indicators of malicious behavior.
 This output helps defenders quickly identify suspicious authentication behavior
 that warrants further investigation.
 
+## High-Value Improvements (Next)
+- Add support for more Event IDs (4624, 4625, 4672, 4688, 4697, 4720, 4728, 4732)
+- Add detection logic (password spraying, brute force bursts, admin privilege events)
+- Add a “Top Source IPs” summary (if available in logs)
+- Add export to JSON + a simple dashboard-ready output
 
 ## Author
 Devon Payton
