@@ -21,6 +21,24 @@ This project focuses on monitoring and analyzing Windows security events to dete
 
 ![Windows Security Event ID Output](scripts/security_event_ids.png)
 
+
+## Output Files
+
+When executed, the script generates the following files in the `output/` directory:
+
+- `security_events_raw_<timestamp>.csv` 
+  Raw Windows Security Event Log entries collected from the system.
+
+- `security_events_summary_<timestamp>.csv` 
+  Aggregated summary of authentication-related events.
+
+- `security_failed_top_users_<timestamp>.csv` 
+  Users with the highest number of failed logon attempts.
+
+These files are excluded from version control via `.gitignore`.
+
+
+
 ## Security Analysis
 
 This script analyzes Windows Security Event Logs to identify authentication activity
