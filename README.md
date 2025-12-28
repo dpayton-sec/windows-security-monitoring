@@ -19,7 +19,7 @@ This project focuses on monitoring and analyzing Windows security events to dete
  In Progress — foundational setup and documentation
 
 
-![PowerShell Security Log Output](scripts/powershell_output.png)
+![Windows Security Event ID Output](scripts/security_event_ids.png)
 
 ## Security Analysis
 
