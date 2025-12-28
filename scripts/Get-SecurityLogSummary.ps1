@@ -11,9 +11,21 @@
 #>
 
 param(
-  [int]$HoursBack = 24,
-  [string]$OutDir = ".\output"
+    [int]$HoursBack = 24,
+    [string]$OutDir = ".\output"
 )
+
+$ErrorActionPreference = "Stop"
+
+if (-not (Test-Path -Path $OutDir)) {
+    New-Item -ItemType Directory -Path $OutDir | Out-Null
+}
+
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host " Windows Security Log Summary Script" -ForegroundColor Cyan
+Write-Host " Output folder: $OutDir" -ForegroundColor Cyan
+Write-Host "========================================" -ForegroundColor Cyan
+  
 
 # Common Security Event IDs to start with (you can expand this later)
 $EventIds = @(
